@@ -72,10 +72,55 @@ Setting up the EJBCA container was an incredibly smooth experience, largely than
 
 1. The output of the logs provide the URL to access the EJBCA web interface
 
-   ![Image of docker compose output](./docs/assets/docker-compose-output.png)
+   ![Image of docker compose output](./assets/docker-compose-output.png)
 
 1. Use this URL in your browser (_preferably Firefox_) to access the web interface
 
    - Note: when using a different machine to access the web interface use the following URL `https://[ip-hosting-ejbca]:443/ejbca/adminweb/`
 
 1. In the browser accapt the security risk by clicking **Advanced** and then **Accept the risk and continue**
+
+   ![Image of EJBCA dashboard](./assets/EJBCA-dashboard.png)
+
+1. Issue SuperAdmin certificate
+
+   1. In EJBCA, click RA Web to access the EJBCA RA UI.
+   1. Under Request new certificate, select Make New Request.
+   1. Update the following information:
+      - For Select Request Template Certificate subtype, select ENDUSER (default).
+      - For Key-pair generation, select By the CA.
+      - For Key algorithm, select RSA 2048 bits.
+      - For the Required Subject DN Attributes Common Name, specify SuperAdmin.
+      - Under Other Data, clear Key Recoverable.
+      - For Provide User Credentials, specify Username "superadmin" and password "foo123" to save this in the EJBCA database under the user name superadmin.
+   1. Last, click Download the PKCS#12 to download the certificate.
+   1. Your certificate is saved as a SuperAdmin.p12 file.
+
+1. Import certificate into browser
+
+1. Access EJBCA as Administrator
+
+   1. In the EJBCA menu, click Roles and Access Rules.
+   1. In the list of available roles, next to Public Access Role, click Delete and verify the deletion of the role.
+      The Roles Management page now lists the Super Administrator Role.
+   1. Next to the Super Administrator Role, click Members.
+   1. Specify the following for the admin role:
+      - Match with: Select X509:CN, Common name.
+      - CA: Select Management CA for the CA to match on.
+      - Match Value: The CN value from the created certificate: "SuperAdmin". Note that this is a case-sensitive matching.
+   1. Click Add to add the user to the Super Administrator Role.
+
+1. Restart EJBCA
+
+   ```cli
+   $ docker compose restart -d
+   ```
+
+1. Refresh the dashboard page in your browser, when prompted for the SuperAdmin certificate, ensure that the correct certificate is selected.
+
+1. Restrict Access to EJBCA
+   1. In the EJBCA menu, click Roles and Access Rules.
+   1. In the list of available roles, next to Public Access Role, click Delete and verify the deletion of the role.
+      The Roles Management page now lists the Super Administrator Role.
+   1. Next to the Super Administrator Role, click Members.
+   1. In the list of available members, for the PublicAccessAuthenticationToken, click Delete and verify the deletion of the role member.
