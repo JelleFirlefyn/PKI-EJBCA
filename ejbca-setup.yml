@@ -81,24 +81,24 @@
     #        delay: 5
     #      delegate_to: localhost
 
-    - name: Wait for EJBCA to start
-      uri:
-        url: "https://ejbca-node1:443/ejbca/adminweb/"
-        method: GET
-        validate_certs: no # Since the certificate is self-signed
-        return_content: yes
-      register: result
-      until: "'EJBCA Administration' in result.content"
-      retries: 30 # You can adjust the number of retries as needed
-      delay: 10 # Wait for 10 sec between retries
-      delegate_to: localhost
+    # - name: Wait for EJBCA to start
+    #   uri:
+    #     url: "https://ejbca-node1:443/ejbca/adminweb/"
+    #     method: GET
+    #     validate_certs: no # Since the certificate is self-signed
+    #     return_content: yes
+    #   register: result
+    #   until: "'EJBCA Administration' in result.content"
+    #   retries: 30 # You can adjust the number of retries as needed
+    #   delay: 10 # Wait for 10 sec between retries
+    #   delegate_to: localhost
 
-    - name: Show logs (this task is optional)
-      command:
-        cmd: "docker-compose logs -f"
-        chdir: containers/
-      register: logs_output
-      ignore_errors: true
+    # - name: Show logs (this task is optional)
+    #   command:
+    #     cmd: "docker-compose logs -f"
+    #     chdir: containers/
+    #   register: logs_output
+    #   ignore_errors: true
 
-    - debug:
-        var: logs_output.stdout_lines
+    # - debug:
+    #     var: logs_output.stdout_lines
