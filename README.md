@@ -17,3 +17,9 @@ _[GitHub Repository](https://github.com/JelleFirlefyn/PKI-EJBCA/)_
 ## Automated setup
 
 - [Set up EJBCA with ansible](./docs/EJBCA-Ansible-setup.md)
+
+## Automation scripts
+
+- [Automatic updater for Apache and Nginx](./updater.py)
+
+- [Automatic certificate checker](./certificate_check.py)
