@@ -2,8 +2,8 @@ FROM httpd:2.4
 
 COPY ./site/index.html /usr/local/apache2/htdocs
 
-COPY /etc/ssl/debian11.pem /usr/local/apache2/conf/server.crt
-COPY /etc/ssl/tls_server.key /usr/local/apache2/conf/server.key
+COPY ./ssl/debian11.pem /usr/local/apache2/conf/server.crt
+COPY ./ssl/tls_server.key /usr/local/apache2/conf/server.key
 
 EXPOSE 80
 EXPOSE 443
