@@ -11,9 +11,11 @@ You can install Microsoft IIS on any Windows operating system. To install it, op
 **Check the correct installation of Microsoft IIS:**
 
 To check the correct installation of Microsoft IIS, open your favorite web browser and type "localhost" into the address bar. If the installation is done correctly, you should see the default website.
+
 ![Image of IIS default website](./assets/default_website.png)
 
 As you can see, SSL/TLS is not currently enabled. In the following steps, we will provide a detailed guide on how to enable SSL/TLS.
+
 
 **Setting up SSL/TLS:**
 
@@ -33,6 +35,7 @@ To import the SSL/TLS certificate, follow these steps:
 3.	Choose the appropriate .pfx file and enter the correct password.
 4.	Leave all other settings at their default values.
 5.	Click "OK."
+   
 ![Image of certificat import interface](./assets/import_certificate.png)
 
 If everything is done correctly, you should see the details of your imported SSL/TLS certificate.
@@ -43,12 +46,14 @@ If everything is done correctly, you should see the details of your imported SSL
  2. Choose "https" as the binding type and enter the host name. Ensure that the host name matches the Common Name on your SSL certificate
  3. Select the appropriate SSL certificate from the list.
  4. Leave all other settings at their default values and click "OK."
+    
 ![Image of binding](./assets/binding_settings.png)
 
 If done correctly, you should see a result or interface that resembles this.
 ![Image of binding overview](./assets/binding_overview.png)
 
 You can close this window now.
+
 
 **Testing the SSL/TLS of our website.**
 
