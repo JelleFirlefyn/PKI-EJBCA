@@ -22,7 +22,7 @@ As you can see, SSL/TLS is not currently enabled. In the following steps, we wil
 To set up SSL/TLS, you'll need a server certificate in .pfx format, which typically contains an SSL certificate and its corresponding private keys. In our case, we had separate .pem and .key files, which we combined into one .pfx file using a tool like OpenSSL.
 
 If you're using your own Public Key Infrastructure (PKI), make sure to import the root CA certificate into your web browser.
-For more information on setting up your own Public Key Infrastructure (PKI) with EJBCA, please refer to our documentation.
+For more information on setting up your own Public Key Infrastructure (PKI) with EJBCA, please refer to our [documentation](./EJBCA-Docker-container-install.md).
 
 To access the Internet Information Services Manager, open the Windows search bar and type "Internet Information Services Manager." Once the app is open, you'll have access to various settings and management options for your IIS web server.
 
