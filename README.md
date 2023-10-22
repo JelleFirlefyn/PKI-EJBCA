@@ -8,10 +8,11 @@ _[GitHub Repository](https://github.com/JelleFirlefyn/PKI-EJBCA/)_
 
 - [EJBCA Docker container install](./docs/EJBCA-Docker-container-install.md)
 
-- [Issue TLS server certificates with EJBCA](./docs/EJBCA-TLS-issue.md)
+- [Issue SSL/TLS server certificates with EJBCA](./docs/EJBCA-TLS-issue.md)
+
+- [Set up SSL/TLS with EJBCA for Nginx](./docs/NGINX-Certificate-setup.md)
 
 - [Set up SSL/TLS with EJBCA for Apache](./docs/EJBCA-Apache-setup.md)
-  
 - [Set up SSL/TLS for Microsoft IIS](./docs/MS_IIS.md)
 
 ## Automated setup
