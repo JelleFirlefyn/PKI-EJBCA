@@ -78,7 +78,7 @@ Setting up the EJBCA container was an incredibly smooth experience, largely than
 
    - Note: when using a different machine to access the web interface use the following URL `https://[ip-hosting-ejbca]:443/ejbca/adminweb/`
 
-1. In the browser accapt the security risk by clicking **Advanced** and then **Accept the risk and continue**
+1. In the browser accept the security risk by clicking **Advanced** and then **Accept the risk and continue**
 
    ![Image of EJBCA dashboard](./assets/EJBCA-dashboard.png)
 
