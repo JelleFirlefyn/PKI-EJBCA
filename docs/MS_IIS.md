@@ -2,18 +2,21 @@
 # Setting up microsoft IIS with SSL/TLS
 
 **Installing Microsoft IIS:**
+
 You can install Microsoft IIS on any Windows operating system. To install it, open the "Control Panel," then go to "Programs" and select "Turn Windows features on or off." Now, locate and select "Internet Information Services." Make sure to select all the necessary components under "Web Management Tools" and "World Wide Web Services."
 
 
 ![Image of windows features](./assets/features.png)
 
 **Check the correct installation of Microsoft IIS:**
+
 To check the correct installation of Microsoft IIS, open your favorite web browser and type "localhost" into the address bar. If the installation is done correctly, you should see the default website.
 ![Image of IIS default website](./assets/default_website.png)
 
 As you can see, SSL/TLS is not currently enabled. In the following steps, we will provide a detailed guide on how to enable SSL/TLS.
 
 **Setting up SSL/TLS:**
+
 To set up SSL/TLS, you'll need a server certificate in .pfx format, which typically contains an SSL certificate and its corresponding private keys. In our case, we had separate .pem and .key files, which we combined into one .pfx file using a tool like OpenSSL.
 
 If you're using your own Public Key Infrastructure (PKI), make sure to import the root CA certificate into your web browser.
@@ -48,6 +51,7 @@ If done correctly, you should see a result or interface that resembles this.
 You can close this window now.
 
 **Testing the SSL/TLS of our website.**
+
 Connect to your website using 'https://' and the correct domain name. If necessary, modify the hosts file.
 If you have followed the documentation correctly, you should observe that the website establishes a secure connection.
 ![Image of secure https](./assets/https_proof.png)
